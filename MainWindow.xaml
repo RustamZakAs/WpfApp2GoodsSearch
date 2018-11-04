@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2GoodsSearch"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Goods Search" Height="340" Width="400" MinHeight="340" MinWidth="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.0*"/>
+            <RowDefinition Height="1.0*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1.0*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Height="20" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="tbKod"   Grid.Column="0" Background="Green" FontSize="15" VerticalAlignment="Center">Kod</TextBox>
+            <TextBox Name="tbName1" Grid.Column="1" Background="Green" FontSize="15" VerticalAlignment="Center">Mal ad 1</TextBox>
+            <TextBox Name="tbName2" Grid.Column="2" Background="Green" FontSize="15" VerticalAlignment="Center">Mal ad 2</TextBox>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1" Height="20" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <CheckBox FontSize="15" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">Aktiv mal</CheckBox>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="3" Height="40" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Button FontSize="17" Grid.Column="0">Təsdiq et</Button>
+            <Button FontSize="17" Grid.Column="1">Çıxış</Button>
+        </Grid>
     </Grid>
 </Window>
