@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2GoodsSearch"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Goods Search" Height="340" Width="400" MinHeight="340" MinWidth="400">
     <Grid>
@@ -28,9 +29,34 @@
         </Grid>
         <Grid Grid.Column="0" Grid.Row="1" Height="20" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition Width="59*" />
+                <ColumnDefinition Width="39*"/>
             </Grid.ColumnDefinitions>
             <CheckBox FontSize="15" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">Aktiv mal</CheckBox>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="2" Background="Lavender">
+            <ListView Name="goodsList" ItemsSource="{DynamicResource ResourceKey=goods}" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Kod}" Width="70">Kod</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="200">Компания</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Width="80">Цена</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.Resources>
+                    <col:ArrayList x:Key="goods">
+                        <local:Goods Kod = "01010101" Name = "Tovar 1" Price = "5.5" />
+                        <local:Goods Kod = "01010102" Name = "Tovar 2" Price = "6.6" />
+                        <local:Goods Kod = "01010103" Name = "Tovar 3" Price = "7.7" />
+                        <local:Goods Kod = "01010104" Name = "Tovar 4" Price = "8.8" />
+                    </col:ArrayList>
+                </ListView.Resources>
+            </ListView>
         </Grid>
         <Grid Grid.Column="0" Grid.Row="3" Height="40" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>

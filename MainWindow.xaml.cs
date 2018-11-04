@@ -25,4 +25,11 @@ namespace WpfApp2GoodsSearch
             InitializeComponent();
         }
     }
+
+    public class Goods
+    {
+        public string Kod { get; set; }
+        public string Name { get; set; }
+        public float Price { get; set; }
+    }
 }
